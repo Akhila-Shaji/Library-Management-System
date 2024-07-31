@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library - Nirmala College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background: url('{% static 'images/library background image.jpg' %}') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .navbar-custom {
+            background-color: #894e1d;
+            border-bottom: 2px solid #ec8f00;
+        }
+
+        .navbar-brand img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ec8f00;
+        }
+
+        .navbar-brand:hover {
+            color: #007bff;
+        }
+
+        .nav-link {
+            color: #ec8f00 !important;
+        }
+
+        .nav-link:hover,
+        .nav-item.dropdown:hover .nav-link {
+            color: #007bff !important;
+        }
+
+        .dropdown-menu {
+            background-color: #894e1d;
+            border-color: #ec8f00;
+        }
+
+        .dropdown-item {
+            color: #ec8f00 !important;
+        }
+
+        .dropdown-item:hover {
+            background-color: #007bff;
+            color: #fff !important;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .welcome-box {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 0.5rem;
+            text-align: center;
+            margin: 3rem auto;
+            max-width: 600px;
+        }
+
+        @media (max-width: 768px) {
+            .custom-container {
+                margin-top: 1rem;
+            }
+
+            .custom-button {
+                margin-top: 1rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'images/lib logo.jpg' %}" alt="Library Logo" class="d-inline-block align-text-top">
+                <span>Library,</span>
+                <span>Nirmala College</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="libraryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Library
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="libraryDropdown">
+                            <li><a class="dropdown-item" href="http://127.0.0.1:8000/library/booksadd/">Add books</a></li>
+                            <li><a class="dropdown-item" href="http://127.0.0.1:8000/library/libdispage/">Books Collection</a></li>
+                            <li><a class="dropdown-item" href="http://127.0.0.1:8000/library/libreqview/">Book Requests</a></li>
+                            <li><a class="dropdown-item" href="http://127.0.0.1:8000/library/acceptlistpage/">Accepted Books</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="studentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Student
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="studentDropdown">
+                            <li><a class="dropdown-item" href="http://127.0.0.1:8000/library/libraryreg/">Register</a></li>
+                            <li><a class="dropdown-item" href="http://127.0.0.1:8000/library/librarylogin/">Login</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="welcome-box">
+            <h1>Welcome to the Library</h1>
+            <p>Nirmala College</p>
+            <p>Email: library@nirmalacollege.edu</p>
+            <p>Phone: +123 456 7890</p>
+            <p>Address: Nirmala College , Muvattupuzha, Kerala</p>
+        </div>
+    </div>
+</body>
+</html>

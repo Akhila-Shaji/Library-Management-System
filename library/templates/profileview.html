@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #D2B48C;
+        }
+        .profile-header {
+            background-color: #4B0082;
+            color: white;
+            padding: 1rem 0;
+        }
+        .profile-details, .library-rules {
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+                        rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+                        rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+                        rgba(0, 0, 0, 0.06) 0px 2px 1px,
+                        rgba(0, 0, 0, 0.09) 0px 4px 2px,
+                        rgba(0, 0, 0, 0.09) 0px 8px 4px,
+                        rgba(0, 0, 0, 0.09) 0px 16px 8px,
+                        rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+        .nav-secondary {
+            background-color: #6A5ACD;
+        }
+        .table h3, .rules h3 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #4B0082;
+        }
+        .btn-primary {
+            background-color: #4B0082;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #6A5ACD;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">{{ user.user.username }}</a>
+    </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-dark nav-secondary">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary mx-2" href="http://127.0.0.1:8000/library/bookdisplaypage/" role="button">View books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary mx-2" href="http://127.0.0.1:8000/library/bookhistory/" role="button">Book History</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary mx-2" href="http://127.0.0.1:8000/library/studentacceptbook/" role="button">Borrowed Books Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary mx-2" href="http://127.0.0.1:8000/library/updateprofile/{{ user.user.id }}" role="button">Edit profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary mx-2" href="http://127.0.0.1:8000/library/Logout_stu/" role="button">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <div class="row pt-4">
+        <div class="col-6 border border-2 bg-light p-4 profile-details">
+            <table class="table table-primary table-striped">
+                <tr>
+                    <td><h3>Register ID:</h3></td>
+                    <td><h3>{{ user.register_id }}</h3></td>
+                </tr>
+                <tr>
+                    <td><h3>Roll No:</h3></td>
+                    <td><h3>{{ user.roll_no }}</h3></td>
+                </tr>
+                <tr>
+                    <td><h3>Department:</h3></td>
+                    <td><h3>{{ user.department }}</h3></td>
+                </tr>
+                <tr>
+                    <td><h3>Phone Number:</h3></td>
+                    <td><h3>{{ user.phone }}</h3></td>
+                </tr>
+                <tr>
+                    <td><h3>College Name:</h3></td>
+                    <td><h3>{{ user.college_name }}</h3></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-6 border border-2 bg-light p-4 library-rules">
+            <h3>Library Rules:</h3>
+            <ul class="rules">
+                <li>Maintain silence at all times.</li>
+                <li>No food or drinks allowed inside the library.</li>
+                <li>Return books by the due date to avoid fines.</li>
+                <li>Handle all library materials with care.</li>
+                <li>Report any lost or damaged books immediately.</li>
+                <li>Use the library computers for educational purposes only.</li>
+                <li>Respect the library staff and other users.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

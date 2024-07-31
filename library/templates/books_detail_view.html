@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ book.book_name }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .container {
+            margin-top: 70px;
+            padding: 20px;
+            background-color: #e1d2b8;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #343a40;
+        }
+
+        h2 {
+            color: #343a40;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .btn-request {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn-request:hover {
+            background-color: #312b21;
+        }
+
+        .description {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center fw-bold p-4">{{ book.book_name }}</h1>
+            <div class="col-lg-6 col-md-12 mb-4">
+                <img src="{{ book.book_image.url }}" alt="{{ book.book_name }}">
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <h2 class="fw-bold text-dark mb-3">{{ book.Author }}</h2>
+                <p class="fw-bold fs-3 description">{{ book.description }}</p>
+                <a href="http://127.0.0.1:8000/library/request/{{ book.id }}" class="btn-request">Request</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
