@@ -1,0 +1,1 @@
+This project is a class-based Library Management System designed to manage the various operations within a library. The system uses object-oriented programming principles to create a modular and maintainable codebase. The primary classes represent core entities such as books, members, and transactions, providing a clear structure for managing the library's data and operations.
